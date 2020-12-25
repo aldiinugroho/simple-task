@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Head from "./Head";
-import Texttoread from "./Textoread";
-import Imgforeact from "./Imgforeact";
+import React, { Component } from "react"
+import Head from "./Head"
+import Texttoread from "./Textoread"
+import Imgforeact from "./Imgforeact"
+import Content from "./Content";
 
 class App extends Component {
     render() {
@@ -10,6 +11,7 @@ class App extends Component {
                 <Head/>
                 <Texttoread/>
                 <Imgforeact/>
+                <Content/>
             </div>
         )
     }
