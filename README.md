@@ -1,2 +1,4 @@
 # simple-task
-# start using npm run dev
+- nodejs
+- expressjs
+- react

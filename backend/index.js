@@ -1,14 +1,22 @@
 const express = require('express')
-const path = require('path')
 const app = express()
+const path = require('path')
 const port = 3080
 
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+// controllers
+const indexcontroller = require("./controllers/indexcontroller");
 
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+// reactJS
+app.use(express.static(path.join(__dirname, '../frontend/build')))
+app.use((req,res,next) => {
+    res.setHeader("Access-Control-Allow-Headers","*")
+    res.setHeader("Access-Control-Allow-Origin","*")
+    res.setHeader("Access-Control-Allow-Methods","*")
+    next()
 })
+
+app.get('/', indexcontroller)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
-  })
+})
