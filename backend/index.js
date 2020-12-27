@@ -4,8 +4,6 @@ const session = require('express-session')
 const app = express()
 const port = 3080
 
-// reactJS
-// app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 app.use(session({
@@ -25,12 +23,10 @@ app.use((req,res,next) => {
     next()
 })
 
-// controllers
-const indexcontroller = require("./controllers/indexcontroller");
+// routes
+const webroutes = require("./routes/webroutes");
 
-app.use('/', indexcontroller)
-app.use('/testdata', indexcontroller)
-app.use('/testdataget', indexcontroller)
+app.use(webroutes)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

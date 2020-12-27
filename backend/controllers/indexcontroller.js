@@ -1,14 +1,8 @@
-const express = require('express')
-const path = require('path')
-const router = express.Router()
+exports.getIndex = async function (req, res) {
+    console.log('mantap')
+}
 
-router.use(express.static(path.join(__dirname, '../views/build')))
-
-router.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-})
-
-router.post('/testdata', (req,res) => {
+exports.postProc = async function (req, res) {
     if (req.body.namee == "" && req.body.agee == "") {
         console.log('input data is empty')
         res.redirect('back')
@@ -19,9 +13,9 @@ router.post('/testdata', (req,res) => {
         req.session.clientData = req.body
         res.redirect('/testdataget')
     }
-})
+}
 
-router.get('/testdataget', (req,res) => {
+exports.getProc = async function (req, res) {
     if (req.session.clientData == null) {
         var a = req.session.clientData
         console.log(a + ' : in url:/testdataget ("no data in session / session is clear")')
@@ -36,6 +30,4 @@ router.get('/testdataget', (req,res) => {
         console.log('=============================')
         res.send(a)
     }
-})
-
-module.exports = router
+}
