@@ -60,6 +60,14 @@ body{
     border-radius: 5px;
 }
 
+.content_form_set>select{
+    border: none;
+    padding: 0.8rem;
+    outline: none;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
 .content_form_conf{
     display: flex;
     flex-direction: column;

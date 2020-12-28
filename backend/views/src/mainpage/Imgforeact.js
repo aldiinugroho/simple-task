@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import imgreact from "./Assets/reactgif.gif"
+import imgreact from "../Assets/reactgif.gif"
 
 class Imgforeact extends Component {
     render() {

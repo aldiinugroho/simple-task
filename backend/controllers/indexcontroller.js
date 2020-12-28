@@ -1,7 +1,3 @@
-exports.getIndex = async function (req, res) {
-    console.log('mantap')
-}
-
 exports.postProc = async function (req, res) {
     if (req.body.namee == "" && req.body.agee == "") {
         console.log('input data is empty')
