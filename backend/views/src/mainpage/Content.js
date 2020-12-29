@@ -1,49 +1,32 @@
 import React, { useEffect, useState } from "react"
 
 const Content = () => { 
-    // const [name, setName] = useState('')
-    // const onApply = (e) => {
-    //     setName(e.currentTarget.value);
-    // };
-        
-    // const sbmt = (e) => {
-    //     e.preventDefault()
-    //     var name = document.getElementById('name').value
-    //     var age = document.getElementById('age').value
-    //     const data = {
-    //         'name' : name,
-    //         'age' : age
-    //     }
-    //     console.log(data)
-    // }
 
     const URL = 'http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2'
-      
-    // const getData = Object.entries(URL).map(([datas]) => {
-    //     return (
-    //         <option>{datas}</option>
-    //     )
-    // })
     
     const GetName = () => {
-        const [name, setName] = useState('')
+        const [data, setData] = useState([])   
 
-        const fetchData = async () => {
-            const callApi = await fetch(URL)
-            const user = await callApi.json()
-            // fix this loop please :)
-            setName(user[2].name)
-        }
         useEffect(() => {
+            async function fetchData() {
+                const callApi = await fetch(URL)
+                const user = await callApi.json()
+                // const toJSOn = await JSON.parse(user)
+                console.log(user)
+                // fix this loop please :)
+                // setName(user.name)
+                setData(user)
+                // setName(user[2].name)
+            }
             fetchData()
-        })
-
-        console.log(name)
+        },[])
 
         return (
             <select name="kendaraan">
                 <option selected disabled>Select item</option>
-                <option value={name}>{name}</option>
+                {data.map(itm => (
+                    <option value={itm.name}>{itm.name}</option>
+                ))}
             </select>
         )
     }
