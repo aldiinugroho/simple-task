@@ -1,3 +1,5 @@
+const path = require('path')
+
 exports.getError = async function (req,res) {
-    res.send('PAGE NOT FOUND :)')
+    res.sendFile(path.resolve(__dirname, '../views/build', 'index.html'))
 }

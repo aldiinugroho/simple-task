@@ -27,3 +27,22 @@ exports.getProc = async function (req, res) {
         res.send(a)
     }
 }
+
+exports.getKendaraan = async function (req,res) {
+    const data = [
+        {
+          "_id": "5fe9f5c340d7b89fa6c0c733", 
+          "name": "Mobil"
+        }, 
+        {
+          "_id": "5fe9f5c39f992d53a3aca25b", 
+          "name": "Motor"
+        }, 
+        {
+          "_id": "5fe9f5c300a5740c97c798ce", 
+          "name": "Pesawat"
+        }
+      ]
+
+    res.json(data)
+}

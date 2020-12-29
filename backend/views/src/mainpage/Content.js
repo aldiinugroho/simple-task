@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Content = () => { 
 
-    const URL = 'http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2'
+    // production server
+    const URL = 'http://localhost:3080/getKendaraan'
+
+    // local server
+    // const URL = 'http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2'
+
     
     const GetName = () => {
         const [data, setData] = useState([])   
@@ -11,12 +17,8 @@ const Content = () => {
             async function fetchData() {
                 const callApi = await fetch(URL)
                 const user = await callApi.json()
-                // const toJSOn = await JSON.parse(user)
                 console.log(user)
-                // fix this loop please :)
-                // setName(user.name)
                 setData(user)
-                // setName(user[2].name)
             }
             fetchData()
         },[])
@@ -43,6 +45,11 @@ const Content = () => {
                     <button>Submit</button>
                 </div>
             </form>
+            <div>
+                <Link to="/detail">
+                    - to detail -
+                </Link>
+            </div>
         </div>
     )
 }
