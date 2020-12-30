@@ -1,8 +1,10 @@
 const express = require('express')
 const bodyparser = require('body-parser')
 const session = require('express-session')
+const webroutes = require("./routes/webroutes")
 const app = express()
 const port = 3080
+
 
 app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
@@ -16,15 +18,13 @@ app.use(session({
         // set value untuk expire login 24 * 60 * 60 * 1000 = 24 jam
     }
 }))
+
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Headers","*")
     res.setHeader("Access-Control-Allow-Origin","*")
     res.setHeader("Access-Control-Allow-Methods","*")
     next()
 })
-
-// routes
-const webroutes = require("./routes/webroutes");
 
 app.use(webroutes)
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 
 const Resultpage = () => {
 
@@ -41,7 +40,7 @@ const Resultpage = () => {
 
     return (
         <div>
-            <a href="/new">- back</a>
+            <a className="resconf" href="/new">- back</a>
             {GetResult()}
         </div>
     )

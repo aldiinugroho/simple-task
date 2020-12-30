@@ -45,7 +45,7 @@ const Content = () => {
                 </div>
             </form>
             <div>
-                <Link to="/result">
+                <Link className="resconf" to="/result">
                     - to result -
                 </Link>
             </div>
