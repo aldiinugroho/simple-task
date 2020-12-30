@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Content = () => { 
 
     // production server
-    const URL = 'http://localhost:3080/getKendaraan'
+    const URL = process.env.REACT_APP_GETKENDARAAN
 
     // local server
     // const URL = 'http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2'
@@ -14,12 +14,16 @@ const Content = () => {
         const [data, setData] = useState([])   
 
         useEffect(() => {
-            async function fetchData() {
-                const callApi = await fetch(URL)
-                const user = await callApi.json()
-                setData(user)
+            try {
+                async function fetchData() {
+                    const callApi = await fetch(URL)
+                    const user = await callApi.json()
+                    setData(user)
+                }
+                fetchData()
+            } catch (error) {
+                
             }
-            fetchData()
         },[])
 
         return (

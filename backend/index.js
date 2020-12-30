@@ -3,7 +3,7 @@ const bodyparser = require('body-parser')
 const session = require('express-session')
 const webroutes = require("./routes/webroutes")
 const app = express()
-const port = 3080
+const port = process.env.PORT || 3080
 
 
 app.use(bodyparser.urlencoded({extended: true}))

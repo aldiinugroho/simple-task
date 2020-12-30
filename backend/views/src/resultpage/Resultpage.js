@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 const Resultpage = () => {
 
     // production server
-    const URL = 'http://localhost:3080/getResult'
+    const URL = process.env.REACT_APP_GETRESULT
 
     // local server
     // const URL = 'http://www.json-generator.com/api/json/get/ceZlscbNxK?indent=2'
@@ -12,14 +12,18 @@ const Resultpage = () => {
         const [result, setResult] = useState("")
 
         useEffect(() => {
-            async function fetchData() {
-                const callResult = await fetch(URL)
-                const resultJSN = await callResult.json()
-                setResult(resultJSN)
+            try {
+                async function fetchData() {
+                    const callResult = await fetch(URL)
+                    const resultJSN = await callResult.json()
+                    setResult(resultJSN)
+                }
+                fetchData()
+            } catch (error) {
+                
             }
-            fetchData()
         },[])
-        
+
         if (result !== "") {
             return (
                 <div className="result_dtl_conf">

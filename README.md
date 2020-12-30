@@ -30,6 +30,15 @@
 - webpack config
     > https://stackoverflow.com/questions/52755247/webpack-urierror-failed-to-decode-param-public-url-favicon-ico <br>
 
+- heroku setup
+    > https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl <br>
+    > https://stackoverflow.com/questions/10474911/heroku-boot-timeout-error-r10 <br>
+    > https://stackoverflow.com/questions/43728830/heroku-process-exited-with-status-137-node-js-app <br>
+    > https://stackoverflow.com/questions/39535558/heroku-enoent-no-such-file-or-directory-stat-app-build-index-html/39535945 <br>
+
+- dotenv setup
+    > https://stackoverflow.com/questions/42182577/is-it-possible-to-use-dotenv-in-a-react-project <br>
+
 - test URL
     > kendaraan : http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2 <br>
     > input form : http://www.json-generator.com/api/json/get/ceZlscbNxK?indent=2 <br>
