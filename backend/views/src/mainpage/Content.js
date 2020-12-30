@@ -17,7 +17,6 @@ const Content = () => {
             async function fetchData() {
                 const callApi = await fetch(URL)
                 const user = await callApi.json()
-                console.log(user)
                 setData(user)
             }
             fetchData()
@@ -46,8 +45,8 @@ const Content = () => {
                 </div>
             </form>
             <div>
-                <Link to="/detail">
-                    - to detail -
+                <Link to="/result">
+                    - to result -
                 </Link>
             </div>
         </div>

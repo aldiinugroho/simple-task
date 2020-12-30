@@ -84,6 +84,23 @@ body{
     color: white;
 }
 
+.result_dtl_conf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+}
+
+.result_dtl_conf>div{
+    background-color: rgb(255, 255, 255);
+    width: 10rem;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
 @font-face {
     font-family: anon;
     src: url('./Assets/Anonymous_Pro.ttf');

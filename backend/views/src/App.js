@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Mainpage from "./mainpage/Mainpage"
-import Detailpage from "./detailpage/Detailpage"
+import Resultpage from "./resultpage/Resultpage"
 import Errorpage from "./errorpage/Errorpage";
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Mainpage}/>
-                    <Route path="/detail" component={Detailpage}/>
+                    <Route path="/result" component={Resultpage}/>
                     <Route component={Errorpage} />
                 </Switch>
             </BrowserRouter>

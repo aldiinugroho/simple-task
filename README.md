@@ -22,3 +22,4 @@
 
 - test URL
     > kendaraan : http://www.json-generator.com/api/json/get/bOZzcAMXeG?indent=2
+    > input form : http://www.json-generator.com/api/json/get/ceZlscbNxK?indent=2
